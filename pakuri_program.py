@@ -11,6 +11,7 @@ while (not intialized):
         pDex = Pakudex(cap)
         if (cap >= 0):
             intialized = True
+            inp = input("Please enter a valid size. ")
         else:
             intialized = False
     except ValueError:
