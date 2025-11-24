@@ -4,11 +4,15 @@ import sys
 
 print("Welcome to Pakudex: Tracker Extraordinaire!")
 
-try:
-    cap = int(input("Enter max capacity of the Pakudex: "))
-    pDex = Pakudex(cap)
-except ValueError:
-    print("Please enter a valid size.")
+intialized = False
+while (not intialized):
+    try:
+        cap = int(input("Enter max capacity of the Pakudex: "))
+        pDex = Pakudex(cap)
+        intialized = True;
+    except ValueError:
+        print("Please enter a valid size.")
+        intialized = False
 
 print(f"The Pakudex can hold {pDex.get_capacity()} species of Pakuri.")
 print("\nPakudex Main Menu")
@@ -21,7 +25,7 @@ print("5. Sort Pakuri")
 print("6. Exit")
 
 try:
-    test = int(blah = input("\nWhat would you like to do? "))
+    test = int(input("\nWhat would you like to do? "))
 except ValueError:
     print("Unrecognized menu selection!")
 
