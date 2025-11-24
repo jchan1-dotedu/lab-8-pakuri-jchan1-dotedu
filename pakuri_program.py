@@ -12,7 +12,7 @@ while (not intialized):
         pDex = Pakudex(cap)
         intialized = True
     except ValueError:
-        print("Please enter a valid size.")
+        inp = input("Please enter a valid size. ")
         intialized = False
 
 print(f"The Pakudex can hold {pDex.get_capacity()} species of Pakuri.")
