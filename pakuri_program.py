@@ -43,7 +43,7 @@ match test:
         spec = input("Enter the name of the species to display: ")
         specList = []
         specList = pDex.get_stats(spec)
-        if specList:
+        if specList is not None:
             print("Error: No such Pakuri!")
         else:
             print("\n Species: " + spec)
@@ -54,7 +54,7 @@ match test:
     case 3:
         spec = input("Enter the name of the species to add: ")
         
-        if (pDex.get_species_array != None):
+        if (pDex.get_species_array is not None):
             if len(pDex.get_species_array()) >= pDex.get_capacity():
                 print("Error: Pakudex is full!")
             elif spec in pDex.get_species_array():

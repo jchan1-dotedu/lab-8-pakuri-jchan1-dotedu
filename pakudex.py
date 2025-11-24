@@ -49,7 +49,7 @@ class Pakudex:
     # Adds species to the pakudex; if successful, return True, and False otherwise
         if len(self.dex) >= self.capacity:
             return False
-        if self.get_species_array() != None:
+        if self.get_species_array() is not None:
             if species in self.get_species_array():
                 return False
         
