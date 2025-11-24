@@ -11,7 +11,7 @@ except ValueError:
     print("Please enter a valid size.")
 
 pDex = Pakudex(capac)
-print(f"The Pakudex can hold {pDex.get_capacity()} species of Pakuri")
+print(f"The Pakudex can hold {pDex.get_capacity()} species of Pakuri.")
 print("\n Pakudex Main Menu")
 print("-----------------")
 print("1. List Pakuri")
@@ -42,6 +42,7 @@ match test:
 
     case 2:
         spec = input("Enter the name of the species to display: ")
+        specList = []
         specList = pDex.get_stats(spec)
         if specList != None:
             print("Error: No such Pakuri!")
@@ -54,10 +55,11 @@ match test:
     case 3:
         spec = input("Enter the name of the species to add: ")
         
-        if len(pDex.get_species_array()) >= pDex.get_capacity():
-            print("Error: Pakudex is full!")
-        elif spec in pDex.get_species_array():
-            print("Error: Pakudex already contains this species!")
+        if (pDex.get_species_array != None):
+            if len(pDex.get_species_array()) >= pDex.get_capacity():
+                print("Error: Pakudex is full!")
+            elif spec in pDex.get_species_array():
+                print("Error: Pakudex already contains this species!")
         
         else:
             pDex.add_pakuri(spec)
