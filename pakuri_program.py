@@ -69,9 +69,9 @@ while True:
                 print("Error: No such Pakuri!")
             else:
                 print("\n Species: " + spec)
-                print("\n Attack: " + specList[0])
-                print("\n Defense: " + specList[1])
-                print("\n Speed: " + specList[2])
+                print("\n Attack: " + str(specList[0]))
+                print("\n Defense: " + str(specList[1]))
+                print("\n Speed: " + str(specList[2]))
 
         case 3:
             if pDex.get_species_array() is not None and len(pDex.get_species_array()) >= pDex.get_capacity():
