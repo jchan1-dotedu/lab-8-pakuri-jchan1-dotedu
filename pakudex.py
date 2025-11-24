@@ -1,13 +1,13 @@
 from pakuri import *
 
 class Pakudex:
-    dex = set()
+    dex = []
     capacity = 0
 
     def __init__(self, capacity=20):
     # Initializes this object to contain exactly capacity objects when completely full. The default capacity pakudex should be 20
         self.capacity = capacity
-        self.dex = set()
+        self.dex = []
         self.size = 0
 
     def get_size(self):
@@ -50,7 +50,7 @@ class Pakudex:
         if len(self.dex) >= self.capacity:
             return False
         
-        self.dex.add(Pakuri(species))
+        self.dex.append(Pakuri(species))
         return True
     
     def evolve_species(self, species):

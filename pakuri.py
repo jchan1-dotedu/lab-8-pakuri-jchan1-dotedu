@@ -46,6 +46,6 @@ class Pakuri:
     def evolve(self):
     # Will evolve the critter as follows: 
     # double the attack, quadruple the defense, and triple the speed
-        attack *= 2
-        defense *= 4
-        speed *= 3  
+        self.attack *= 2
+        self.defense *= 4
+        self.speed *= 3  

@@ -1,5 +1,6 @@
 from pakuri import *
 from pakudex import *
+import sys
 
 print("Welcome to Pakudex: Tracker Extraordinaire!")
 cap = input("Enter max capacity of the Pakudex: ")
@@ -14,8 +15,9 @@ print("4. Evolve Pakuri")
 print("5. Sort Pakuri")
 print("6. Exit")
 blah = input("\n What would you like to do? ")
+test = int(blah)
 
-match blah:
+match test:
     case 1:
         if pDex.get_size() == 0:
             print("No Pakuri in Pakudex yet!")
@@ -67,5 +69,7 @@ match blah:
     case 6:
         print("Thanks for using Pakudex! Bye!")
         sys.exit()
+    
+
 
 
