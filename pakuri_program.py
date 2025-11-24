@@ -20,7 +20,7 @@ print("3. Add Pakuri")
 print("4. Evolve Pakuri")
 print("5. Sort Pakuri")
 print("6. Exit")
-blah = input("\n What would you like to do? ")
+blah = input("\nWhat would you like to do? ")
 try:
     test = int(blah)
 except ValueError:
