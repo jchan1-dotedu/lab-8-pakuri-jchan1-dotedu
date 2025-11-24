@@ -3,9 +3,9 @@ from pakudex import *
 
 print("Welcome to Pakudex: Tracker Extraordinaire!")
 
-inp = input("Enter max capacity of the Pakudex: ")
 intialized = False
 while (not intialized):
+    inp = input("Enter max capacity of the Pakudex: ")
     try:
         cap = int(inp)
         pDex = Pakudex(cap)
@@ -13,9 +13,9 @@ while (not intialized):
             intialized = True
         else:
             intialized = False
-            inp = input("Please enter a valid size. ")
+            print("Please enter a valid size. ")
     except ValueError:
-        inp = input("Please enter a valid size. ")
+        print("Please enter a valid size. ")
         intialized = False
 
 print(f"The Pakudex can hold {pDex.get_capacity()} species of Pakuri.")
@@ -74,17 +74,16 @@ while True:
                 print("\n Speed: " + specList[2])
 
         case 3:
-            spec = input("Enter the name of the species to add: ")
-            
-            if (pDex.get_species_array() is not None):
-                if len(pDex.get_species_array()) >= pDex.get_capacity():
-                    print("Error: Pakudex is full!")
-                elif spec in pDex.get_species_array():
-                    print("Error: Pakudex already contains this species!")
-            
+            if pDex.get_species_array() is not None and len(pDex.get_species_array()) >= pDex.get_capacity():
+                print("Error: Pakudex is full!")
             else:
-                pDex.add_pakuri(spec)
-                print(f"Pakuri species {spec} successfully added!")
+                spec = input("Enter the name of the species to add: ")
+                
+                if pDex.get_species_array() is not None and spec in pDex.get_species_array():
+                    print("Error: Pakudex already contains this species!")
+                else:
+                    pDex.add_pakuri(spec)
+                    print(f"Pakuri species {spec} successfully added!")
 
         case 4:
             spec = input("Enter the name of the species to evolve: ")
