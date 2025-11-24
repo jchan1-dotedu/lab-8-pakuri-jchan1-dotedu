@@ -1,6 +1,5 @@
 from pakuri import *
 from pakudex import *
-import sys
 
 print("Welcome to Pakudex: Tracker Extraordinaire!")
 
@@ -101,7 +100,7 @@ while True:
 
         case 6:
             print("Thanks for using Pakudex! Bye!")
-            sys.exit()
+            break
         
         case _:
             print("Unrecognized menu selection!")
