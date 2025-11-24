@@ -3,16 +3,15 @@ from pakudex import *
 import sys
 
 print("Welcome to Pakudex: Tracker Extraordinaire!")
-cap = input("Enter max capacity of the Pakudex: ")
 
 try:
-    capac = int(cap)
+    cap = int(input("Enter max capacity of the Pakudex: "))
+    pDex = Pakudex(cap)
 except ValueError:
     print("Please enter a valid size.")
 
-pDex = Pakudex(capac)
 print(f"The Pakudex can hold {pDex.get_capacity()} species of Pakuri.")
-print("\n Pakudex Main Menu")
+print("\nPakudex Main Menu")
 print("-----------------")
 print("1. List Pakuri")
 print("2. Show Pakuri")
@@ -20,9 +19,9 @@ print("3. Add Pakuri")
 print("4. Evolve Pakuri")
 print("5. Sort Pakuri")
 print("6. Exit")
-blah = input("\nWhat would you like to do? ")
+
 try:
-    test = int(blah)
+    test = int(blah = input("\nWhat would you like to do? "))
 except ValueError:
     print("Unrecognized menu selection!")
 
@@ -44,7 +43,7 @@ match test:
         spec = input("Enter the name of the species to display: ")
         specList = []
         specList = pDex.get_stats(spec)
-        if specList != None:
+        if specList:
             print("Error: No such Pakuri!")
         else:
             print("\n Species: " + spec)
