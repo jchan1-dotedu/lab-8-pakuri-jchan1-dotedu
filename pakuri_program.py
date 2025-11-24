@@ -4,12 +4,13 @@ import sys
 
 print("Welcome to Pakudex: Tracker Extraordinaire!")
 
+inp = input("Enter max capacity of the Pakudex: ")
 intialized = False
 while (not intialized):
     try:
-        cap = int(input("Enter max capacity of the Pakudex: "))
+        cap = int(inp)
         pDex = Pakudex(cap)
-        intialized = True;
+        intialized = True
     except ValueError:
         print("Please enter a valid size.")
         intialized = False
@@ -24,10 +25,22 @@ print("4. Evolve Pakuri")
 print("5. Sort Pakuri")
 print("6. Exit")
 
-try:
-    test = int(input("\nWhat would you like to do? "))
-except ValueError:
-    print("Unrecognized menu selection!")
+
+recognized = False
+while (not recognized):
+    try:
+        test = int(input("\nWhat would you like to do? "))
+        recognized = True
+    except ValueError:
+        print("Unrecognized menu selection!")
+        print("\nPakudex Main Menu")
+        print("-----------------")
+        print("1. List Pakuri")
+        print("2. Show Pakuri")
+        print("3. Add Pakuri")
+        print("4. Evolve Pakuri")
+        print("5. Sort Pakuri")
+        print("6. Exit")
 
 match test:
     case 1:
@@ -47,7 +60,7 @@ match test:
         spec = input("Enter the name of the species to display: ")
         specList = []
         specList = pDex.get_stats(spec)
-        if specList is not None:
+        if specList is None:
             print("Error: No such Pakuri!")
         else:
             print("\n Species: " + spec)
@@ -58,7 +71,7 @@ match test:
     case 3:
         spec = input("Enter the name of the species to add: ")
         
-        if (pDex.get_species_array is not None):
+        if (pDex.get_species_array() is not None):
             if len(pDex.get_species_array()) >= pDex.get_capacity():
                 print("Error: Pakudex is full!")
             elif spec in pDex.get_species_array():
