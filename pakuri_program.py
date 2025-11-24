@@ -4,7 +4,13 @@ import sys
 
 print("Welcome to Pakudex: Tracker Extraordinaire!")
 cap = input("Enter max capacity of the Pakudex: ")
-pDex = Pakudex(cap)
+
+try:
+    capac = int(cap)
+except ValueError:
+    print("Please enter a valid size.")
+
+pDex = Pakudex(capac)
 print(f"The Pakudex can hold {pDex.get_capacity()} species of Pakuri")
 print("\n Pakudex Main Menu")
 print("-----------------")
@@ -15,7 +21,10 @@ print("4. Evolve Pakuri")
 print("5. Sort Pakuri")
 print("6. Exit")
 blah = input("\n What would you like to do? ")
-test = int(blah)
+try:
+    test = int(blah)
+except ValueError:
+    print("Unrecognized menu selection!")
 
 match test:
     case 1:
@@ -70,6 +79,8 @@ match test:
         print("Thanks for using Pakudex! Bye!")
         sys.exit()
     
+    case _:
+        print("Unrecognized menu selection!")
 
 
 
